@@ -1,0 +1,27 @@
+<h3><strong>Listado de heroes</strong></h3>
+
+<div *ngIf="deletedHero; else nothingWasDeleted">
+    <h3>Heroe borrado <small class="text-danger" >{{ deletedHero }}</small></h3>
+</div>
+
+<ng-template #nothingWasDeleted> <!--Es un nuevo componente de angular global que hace la funcion de un div, pero que no existe fisicamente-->
+    <h3>No ha borrado nada.</h3>
+</ng-template> <!--# en angular se conoce como una referencia local-->
+
+<button 
+    *ngIf="heroNames.length > 0" 
+    (click)="removeLastHero()"
+    class="btn btn-outline-danger">
+    Borrar ultimo heroe
+</button>
+
+<ul class="mt-2 list-group">
+    <li *ngFor="let name of heroNames" 
+    class="list-group-item">
+        <strong>{{ name }}</strong>
+    </li> 
+</ul>
+
+<!-- Lo que hace es como crearse un template de html que va a repetir basado en la 
+cantidad de elementos que tenemos en el ciclo for
+-->
