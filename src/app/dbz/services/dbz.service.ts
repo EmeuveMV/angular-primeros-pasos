@@ -22,6 +22,10 @@ export class DbzService {
         id: uuid(),
         name: 'Vegetta',
         power: 7500,
+    },{
+        id: uuid(),
+        name: 'Marianny (Mi futura esposa)',
+        power: 99999999,
     }];
 
 
